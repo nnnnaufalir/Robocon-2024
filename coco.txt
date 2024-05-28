@@ -1,6 +1,0 @@
-blue_ball
-blue_rice
-purple_ball
-red_ball
-red_rice
-silo
