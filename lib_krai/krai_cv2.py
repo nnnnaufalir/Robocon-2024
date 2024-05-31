@@ -27,11 +27,11 @@ class DetectionUtils:
     def draw_point(frame, frame_width, frame_height, x1, y1, x2, y2, color):
         center_x = (x1 + x2) // 2
         center_y = (y1 + y2) // 2
-        bottom_center_x = frame_width // 2
-        bottom_center_y = frame_height
+        # bottom_center_x = frame_width // 2
+        # bottom_center_y = frame_height
 
-        cv2.line(frame, (center_x, center_y),
-                 (bottom_center_x, bottom_center_y), (255, 255, 255), 2)
+        # cv2.line(frame, (center_x, center_y),
+        #          (bottom_center_x, bottom_center_y), (255, 255, 255), 2)
         cv2.circle(frame, (center_x, center_y), 5, color, -1)
         cv2.putText(frame, f'({center_x}, {center_y})', (center_x,
                     center_y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
@@ -74,3 +74,10 @@ class DetectionUtils:
     @staticmethod
     def logic_class(class_name, target):
         return class_name == target
+    
+    @staticmethod
+    def error_pixel(x, y):
+        final_x = x - 320
+        final_y = 640 - y
+        return final_x, final_y
+
